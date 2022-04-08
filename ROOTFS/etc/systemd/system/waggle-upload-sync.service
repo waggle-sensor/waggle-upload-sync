@@ -1,0 +1,10 @@
+[Unit]
+Description=Waggle Upload Sync Service
+
+[Service]
+EnvironmentFile=/etc/waggle/upload-sync.env
+ExecStart=/usr/bin/waggle_upload_sync.sh
+Nice=5
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,10 @@
+[Unit]
+Description=Waggle Upload Sync Timer
+
+[Timer]
+OnBootSec=5m 
+OnUnitActiveSec=30m
+Unit=waggle-upload-sync.service
+
+[Install]
+WantedBy=basic.target

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+systemctl stop waggle-upload-sync.timer || true
+systemctl disable waggle-upload-sync.timer || true
+systemctl stop waggle-upload-sync.service || true

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+case "${1}" in
+  configure)
+    echo "Enabling & Start Waggle Upload Sync Service"
+    systemctl enable waggle-upload-sync.timer
+    systemctl start waggle-upload-sync.timer || true
+    ;;
+esac
