@@ -2,7 +2,14 @@
 
 `systmed` timer service to `rsync` the contents of the node's upload data upload folder (i.e. `/media/plugin-data/uploads`) to an external drive.
 
-> *Note*: After installation, the service will fail until the `/etc/waggle/upload-sync.env` file is updated to valid a proper `SYNC_DRIVE` path.
+## Installation and Post-Install Configuration
+
+After installing the Debian package the service will automatically run and fail as the default sync device is `/dev/dummy`. To enable the service to sync to the desired external media the following steps need to be taken:
+
+1. edit the `SYNC_DRIVE` variable in the `/etc/waggle/upload-sync.env` file to the external media (ex. `/dev/sdb2`) path
+2. wait for the service to auto-run or force the service to start via `systemctl start waggle-upload-sync.service`
+
+>*Note*: you can see the logs for the service via `journalctl -fu waggle-upload-sync`
 
 ## Customize Execution
 
