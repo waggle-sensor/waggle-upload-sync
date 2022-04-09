@@ -6,7 +6,7 @@ function cleanup()
 {
     echo "Sync & cleanup mount [${SYNC_DRIVE} (${SYNC_MOUNT})]"
     sync
-    umount ${SYNC_DRIVE} || true
+    umount ${SYNC_MOUNT} || true
     rm -rf ${SYNC_MOUNT}
 }
 
