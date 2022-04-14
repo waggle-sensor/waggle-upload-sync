@@ -5,6 +5,7 @@ Description=Waggle Upload Sync Service
 EnvironmentFile=/etc/waggle/upload-sync.env
 ExecStart=/usr/bin/waggle_upload_sync.sh
 Nice=5
+RuntimeMaxSec=25m
 
 [Install]
 WantedBy=multi-user.target
