@@ -59,6 +59,11 @@ if ! mkdir -p ${rsync_dest}; then
 fi
 
 # execute rsync
-rsync -av --delete ${SYNC_SOURCE} ${rsync_dest}
+rsync -av \
+    --delete \
+    --progress \
+    --itemize-changes \
+    --partial-dir=.partial/ \
+    ${SYNC_SOURCE} ${rsync_dest}
 
 echo "Sync complete [${SYNC_SOURCE} -> ${SYNC_DRIVE} (${rsync_dest})"
